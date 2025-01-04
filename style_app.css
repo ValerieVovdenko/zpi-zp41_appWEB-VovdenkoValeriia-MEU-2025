@@ -102,7 +102,7 @@ header .fa-bars {
 }
 
 .home-container {
-    background: url(../images/main_cover.jpg) no-repeat;
+    background: url(images/main_cover.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
