@@ -214,7 +214,7 @@ header .fa-bars {
 }
 
 .contact .row {
-    background: url(../images/contact-cover.jpg) no-repeat;
+    background: url(images/contact-cover.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
