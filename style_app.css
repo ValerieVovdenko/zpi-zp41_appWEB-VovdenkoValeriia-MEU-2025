@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Bad Script", serif;
     outline: none;
     border: none;
     text-decoration: none;
@@ -102,7 +102,7 @@ header .fa-bars {
 }
 
 .home-container {
-    background: url(images/main_cover.jpg) no-repeat;
+    background: url(../images/main_cover.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -214,7 +214,7 @@ header .fa-bars {
 }
 
 .contact .row {
-    background: url(images/contact-cover.jpg) no-repeat;
+    background: url(../images/contact-cover.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -325,49 +325,96 @@ ul {
 }
 
 
-
-
 /* Медіа запити  */
-@media (max-width:991px) {
+@media (min-width: 1024px) {
 
+    /*  Збільшення загального розміру шрифту для кращої читабельності */
+    html {
+        font-size: 70%;
+    }
+
+    /*  Збільшення ширини контейнера для контенту */
+    section {
+        max-width: 1400px;
+    }
+
+    /*  Оптимізація меню (логотип, навігація) */
+    header .logo {
+        font-size: 3.5rem;
+    }
+
+    header .navbar a {
+        font-size: 2.2rem;
+        padding: 0 2rem;
+    }
+
+    /* Зміна розміру заголовків на головній сторінці */
+    .heading {
+        font-size: 5rem;
+    }
+
+    .home .content h3 {
+        font-size: 7rem;
+    }
+
+    .home .content span {
+        font-size: 4rem;
+    }
+
+    /*  Покращення карток товарів */
+    .products .box-container {
+        justify-content: center;
+    }
+
+    .products .box-container .box {
+        flex: 1 1 25rem;
+        /* Зменшена максимальна ширина карток */
+    }
+
+    /*  Оптимізація контактної форми */
+    .contact .row form {
+        max-width: 60rem;
+        padding: 3rem;
+    }
+
+    /*  Збільшення футеру та іконок соціальних мереж */
+    .footer .box-container .box h3 {
+        font-size: 2.5rem;
+    }
+
+    .links img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+@media (max-width: 991px) {
+
+    /* Зменшуємо розмір шрифту для всього сайту
+       */
     html {
         font-size: 55%;
     }
 
-    .home {
-        background-position: left;
+    /* Збільшуємо відступи в шапці сайту для кращого відображення на планшетах */
+    header {
+        padding: 2rem;
     }
 
-}
-
-@media (max-width:768px) {
-
+    /* Показуємо іконку гамбургер меню */
     header .fa-bars {
         display: block;
     }
 
-    header .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #eee;
-        border-top: .1rem solid rgba(0, 0, 0, .1);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-
+    /* Показуємо меню при кліку по гамбургеру */
     header #toggler:checked~.navbar {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
 
-    header .navbar a {
-        margin: 1.5rem;
-        padding: 1.5rem;
-        background: #fff;
-        border: .1rem solid rgba(0, 0, 0, .1);
-        display: block;
-    }
+    /* === Адаптація головної секції === */
 
+    /* Зменшуємо розмір головного заголовка */
     .home .content h3 {
         font-size: 5rem;
     }
@@ -376,24 +423,138 @@ ul {
         font-size: 2.5rem;
     }
 
-    .icons-container .icons h3 {
-        font-size: 2rem;
+    /* Налаштування розміру карток продуктів */
+    .products .box-container .box {
+        flex: 1 1 40rem;
+
     }
 
-    .icons-container .icons span {
-        font-size: 1.7rem;
+    /* Зменшуємо розмір зображень товарів */
+    .products .box-container .box .image img {
+        height: 30rem;
     }
 
+    /* Розтягуємо контактну форму на всю ширину */
+    .contact .row form {
+        max-width: 100%;
+    }
+
+    /* === Адаптація футера === */
+
+    .footer .box-container .box {
+        flex: 1 1 40rem;
+        /* Збільшуємо базову ширину блоку */
+    }
 }
 
-@media (max-width:450px) {
 
-    html {
-        font-size: 50%;
+@media (max-width: 768px) {
+
+    /* Показати іконку меню (бургер-меню) для мобільних пристроїв */
+    header .fa-bars {
+        display: block;
     }
 
-    .heading {
-        font-size: 3rem;
+    /* Робимо навігаційне меню прихованим за замовчуванням */
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        /* Розміщуємо меню одразу під хедером */
+        left: 0;
+        right: 0;
+        background: #eee;
+        /* Фон меню */
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        /* Легка межа зверху */
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        /* Ховаємо меню */
     }
 
+    /* Показуємо меню при активації чекбоксу (натисканні на бургер-меню) */
+    header #toggler:checked~.navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    /* Налаштовуємо стилі пунктів меню */
+    header .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: #fff;
+        border: .1rem solid rgba(0, 0, 0, .1);
+        display: block;
+        /* Розміщуємо елементи один під одним */
+        text-align: center;
+        /* Центруємо текст */
+    }
+
+    /* Зменшуємо розмір заголовків на головній сторінці */
+    .home .content h3 {
+        font-size: 5rem;
+    }
+
+    .home .content span {
+        font-size: 2.5rem;
+    }
+
+    /* Приховуємо блок іконок на мобільних пристроях */
+    .icons-container {
+        display: none;
+    }
+
+    /* Оптимізуємо контактну форму для мобільних пристроїв */
+    .contact .row form {
+        width: 100%;
+        /* Робимо форму повної ширини */
+        padding: 1rem;
+    }
+
+    /* Зменшуємо мінімальну висоту головного блоку */
+    .home {
+        min-height: 80vh;
+    }
+
+    /* Робимо картки товарів меншими */
+    .products .box-container .box {
+        flex: 1 1 100%;
+        /* Тепер одна картка на ряд */
+    }
+
+    .products .box-container {
+        gap: 1rem;
+        /* Зменшуємо відстань між картками */
+    }
+
+    .products .box-container .box .image img {
+        height: 30rem;
+        /* Зменшуємо висоту зображень */
+    }
+
+    /* Робимо кнопки компактнішими */
+    .btn {
+        font-size: 1.5rem;
+        padding: 0.8rem 2rem;
+    }
+
+    .footer .box-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* Два стовпці */
+        gap: 1rem;
+        /* Зменшуємо відстань між блоками */
+    }
+
+    .footer .box-container .box {
+        text-align: center;
+        /* Вирівнюємо контент по центру */
+    }
+
+    .footer .box-container .box h3 {
+        font-size: 2rem;
+        /* Трохи менший заголовок */
+    }
+
+    .footer .box-container .box a {
+        font-size: 1.5rem;
+        /* Зменшуємо розмір посилань */
+    }
 }
